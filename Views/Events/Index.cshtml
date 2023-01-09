@@ -1,0 +1,47 @@
+﻿@model IEnumerable<EventManagement.Models.Event>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<button class="btn btn-primary">
+    <a style="color:white" asp-action="Create">Create New</a>
+</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EventLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrganizerName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrganizerName)
+            </td>
+            <td>
+                    <a style="color:blue" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a style="color:blue" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a style="color:blue" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

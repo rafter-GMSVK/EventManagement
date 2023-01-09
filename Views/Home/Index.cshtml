@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="firstClass" style="display:flex; flex-direction:column; align-items:center; ">
+<h1 style="color:teal" class="display-4">Welcome!!!</h1>
+<div style="display:flex; gap:10px" class="text-center">
+   
+    @using(Html.BeginForm("Create", "Tickets"))
+    {
+    <div>
+        <button type="submit" class="btn btn-primary">Buy Tickets</button>
+    </div>
+    }
+
+    
+   
+</div>
+
+</div>
